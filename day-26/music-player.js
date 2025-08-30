@@ -4,6 +4,7 @@ const player = {
   timeToPrev: 2,
   playlist: document.querySelector(".playlist"),
   songTitle: document.querySelector(".song-title"),
+  songArtist:document.querySelector(".song-artist"),
   thumbSong: document.querySelector(".cd-thumb"),
   audio: document.querySelector("#audio"),
   playIcon: document.querySelector("#icon-play"),
@@ -22,21 +23,21 @@ const player = {
       id: 1,
       name: "Kho Báu (with Rhymastic)",
       path: "./musics/songs/nhac1.mp3",
-      artist: "Nguyễn A",
+      artist: "Rhymastic và Trọng Hiếu",
       pathThumb: "./musics/thumbs/image1.png",
     },
     {
       id: 2,
       name: "NÉT",
       path: "./musics/songs/nhac2.mp3",
-      artist: "Nguyễn B",
+      artist: "Cường Seven, Phan Đinh Tùng, Bằng Kiều",
       pathThumb: "./musics/thumbs/image2.png",
     },
     {
       id: 3,
       name: "Yêu Em Dài Lâu - Yêu 5",
       path: "./musics/songs/nhac3.mp3",
-      artist: "Nguyễn C",
+      artist: "Cường Seven, (S)TRONG",
       pathThumb: "./musics/thumbs/image3.png",
     },
     {
@@ -65,8 +66,8 @@ const player = {
   loadCurrentSong() {
     const currentSong = this.getCurrentSong(this.currentIndex);
     this.songTitle.textContent = currentSong.name;
+    this.songArtist.textContent = currentSong.artist;
     this.audio.src = currentSong.path;
-
     this.thumbSong.style.backgroundImage = `url("${currentSong.pathThumb}")`;
   },
   getRandomSong() {
